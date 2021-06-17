@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}  Preview {% endblock title %}
+{%block dash%}Preview {%endblock dash%}
+{%block body%}
+<section>
+    <section class="text-gray-600 body-font overflow-hidden">
+        <div class="container px-5 py-24 mx-auto">
+          <div class="lg:w-4/5 mx-auto flex flex-wrap">
+            <img alt="ecommerce" class="lg:w-1/2 w-full lg:h-auto h-20 object-cover object-center rounded" src="/media/{{data.image}}">
+            <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
+              <h2 class="text-sm title-font text-gray-500 tracking-widest">The Full Details</h2>
+              <h1 class="text-gray-900 text-3x2 title-font font-medium mb-1 mt-4"></h1>
+              <div class="flex  my-5">
+                <dl class="row">
+                    <dt class="col-sm-3">NAME : </dt>
+                    <dd class="col-sm-9">{{data.name}}</dd>
+                    <dt class="col-sm-3">CITY : </dt>
+                    <dd class="col-sm-9">{{data.city}}</dd>
+                    <dt class="col-sm-3">ADDRESS : </dt>
+                    <dd class="col-sm-9">{{data.address}}</dd>
+                    <dt class="col-sm-3 text-truncate">DEPT :
+                    </dt>
+                    <dd class="col-sm-9">{{data.dept}}</dd>
+                  </dl>
+              </div>
+          </div>
+        </div>
+      </section>
+</section>
+
+<section>
+</section>
+{%endblock body%}
+{%block js%}
+{%endblock js%}

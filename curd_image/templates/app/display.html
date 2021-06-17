@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block title %}  Display {% endblock title %}
+{%block dash%}Display{%endblock dash%}
+{%block body%}
+<section class="container">
+<div class="container text-center" >
+                <p class="mb-5"> <strong>StackedDisplay form</strong></p>
+                <table class="table table-hover">
+                    <thead class="text-white bg-dark">
+                      <tr>
+                        <th>Preview</th>
+                        <th>S ID</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Department</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for i in data%}
+                      <tr>
+                        <td><a href="preview/{{i.sno}}" id="{{i.sno}}"><i class="zmdi zmdi-eye"></i></a></td>
+                        <td>{{i.sno}}</td>
+                        <td>{{i.name}}</td>
+                        <td>{{i.city}}</td>
+                        <td>{{i.dept}}</td>
+                        <td><a href="update/{{i.sno}}"  id = '{{i.sno}}'><i class="zmdi zmdi-edit"></i></a></td>
+                        <td><a href="delete/{{i.sno}}"  id = '{{i.sno}}'><i class="zmdi zmdi-delete"></i></a></td>
+                      </tr>
+                    {% endfor%}
+                    </tbody>
+                  </table>
+            </div>
+
+</section>
+<section>
+
+</section>
+{%endblock body%}
+{%block js%}
+{%endblock js%}

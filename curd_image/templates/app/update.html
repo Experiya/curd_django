@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}  Update {% endblock title %}
+{%block dash%}Update{%endblock dash%}
+{%block body%}
+
+<section class=" container my-5">
+    <div class="row">
+      <div class=" col p-5">
+          <div class="container">
+              <h2 class=""><strong>Stacked Update form ID is {{edit_id}}</strong></h2>
+              <form action="/update/{{edit_id}}" method="POST" spellcheck="true" enctype="multipart/form-data" >  {% csrf_token %}
+                <div class="form-group">
+                  <label for="name"><strong>Name:</strong></label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="" value="{{data2.name}}">
+                </div>
+                <div class="form-group">
+                  <label for="City"><strong>City</strong></label>
+                  <input type="text" class="form-control" id="city" placeholder="" value="{{data2.city}}" name="city">
+                </div>
+                <div class="form-group">
+                  <label for="Address"><strong>Address:</strong></label>
+                  <textarea class="form-control" id="address" name="address">{{data2.address}}</textarea>
+                </div>
+                <div class="form-group">
+                  <label for="Dept"><strong>Department</strong></label>
+                  <input type="text" class="form-control" name="dept" placeholder="" value="{{data2.dept}}">
+                </div>
+                <!--<div class="form-group">
+                  <label for="image"><strong>Change your profile picture:</strong></label>
+                  <input  type="file" name="image" id="image" accept="image/*" src="time.jpg" >
+                </div>-->
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+            </div>
+      </div>
+      <div class="col p-5">
+          <div class="container text-center" >
+              <h2 class="mb-5"><strong> Display form</strong></h2>
+              <table class="table table-hover">
+                  <thead class="text-white bg-dark">
+                    <tr>
+                      <th>Name</th>
+                      <th>City</th>
+                      <th>Address</th>
+                      <th>Department</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>{{data2.name}}</td>
+                      <td>{{data2.city}}</td>
+                      <td>{{data2.address}}</td>
+                      <td>{{data2.dept}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+          </div>
+      </div>
+    </div>
+</section>
+<section class="container">
+
+
+</section>
+{%endblock%}
